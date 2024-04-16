@@ -13,6 +13,8 @@ class TweetsController < ApplicationController
         end
     end
 
+    def top
+    end
     def new
         @tweet = Tweet.new
     end

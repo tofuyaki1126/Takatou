@@ -1,7 +1,22 @@
+<div class="header-logo">
+    <h1>yashiki89.</h1>
+  </div>
+  <div class="openbtn"><span></span><span></span><span></span></div>
+  <nav id="g-nav">
+    <div id="g-nav-list">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+    <li><%= link_to "ログイン", new_user_session_path %></li>  
+    <li><%= link_to "新規登録", new_user_registration_path %></li>
+    <li><%= link_to "新規投稿へ", new_tweet_path %><li>
+    <li><%= link_to "トップページへ", tweets_top_path %><li>
+        <li>
+        </li>
+        <li>
+  </nav>
+</header>
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Yashiki89</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,19 +25,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-  <header>
-   <h1>GeekTwitter</h1>
-   <div class="header-list">
-    <ul>
-     <% if user_signed_in? %>
-      <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-     <% else %>
-      <li><%= link_to "新規登録", new_user_registration_path %></li>
-      <li><%= link_to "ログイン", new_user_session_path %></li>
-     <% end %>
-    </ul>
-   </div>
-  </header>
+  
   <main>
    <%= yield %>
   </main>
@@ -31,3 +34,15 @@
     </footer>
  </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+[12:14] <script>
+$(".openbtn").click(function () {
+ $(this).toggleClass("active");
+ $("#g-nav").toggleClass("panelactive");
+});
+$("#g-nav a").click(function () {
+ $(".openbtn").removeClass("active");
+ $("#g-nav").removeClass("panelactive");
+});
+</script>

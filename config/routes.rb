@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'tweets/:tweet_id/likes' => 'likes#create'
   get 'tweets/:tweet_id/likes/:id' => 'likes#destroy'
+  get 'tweets/top' => 'tweets#top'
   resources :users, only: [:show] 
   resources :tweets
   resources :tweets do
